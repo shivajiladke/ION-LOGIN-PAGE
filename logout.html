@@ -1,0 +1,119 @@
+<html>
+
+<head>
+
+<title>I-ON logout</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<meta http-equiv="pragma" content="no-cache">
+
+<meta http-equiv="expires" content="-1">
+
+<style type="text/css">
+
+<!--
+textarea,input,select {
+	background-color: #FBFBFB;
+
+	                          border: 1px #BBBBBB solid;
+                                     
+	padding: 2px;margin: 1px;
+       
+	                font-size: 14px;
+ color: #808080;
+}
+
+.
+tabula{
+ 
+border-width: 1px; 
+border-collapse: collapse; 
+border-color: #c1c1c1; 
+background-color: transparent;
+font-family: verdana;
+font-size: 11px;
+}
+
+
+body{ color: #737373; font-size: 12px; font-family: verdana; }
+
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
+
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 12px; padding: 4px;}
+
+-->
+
+</style>
+
+</head>
+
+
+<body>
+<script language="JavaScript">
+
+<!--
+ function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+open('$(link-login)', '_blank', '');
+window.close();
+	return false;
+    }
+//-->
+
+</script>
+
+
+</head>
+<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0" advert-pending == 'yes' 
+	onLoad="openAdvert()" bgcolor="#FFFFFF">
+<table width="100%" height="80%">
+
+
+
+<tr>
+
+<td align="center" valign="middle"><font color="#96a1c1">
+<b>You have just logged out</b> </font><br><br>
+
+<font color="#E9967A"><table class="tabula" border="1" > </font> 
+
+<tr><td align="right"><font color="#96a1c1"><b>user name</b></font></td><td><font color="#E9967A">$(username)</td></font></tr>
+
+<tr><td align="right"><font color="#96a1c1">
+<b>IP address</td><td><font color="#E9967A">
+$(ip)</td></font></tr>
+
+<tr><td align="right"><font color="#96a1c1">
+<b>MAC address</td><td><font color="#E9967A">$(mac)</td></font></tr>
+
+<tr><td align="right"><font color="#96a1c1">
+<b>session time</td><td><font color="#E9967A">$(uptime)</td></font></tr>
+
+$(if session-time-left)
+<tr><td align="right"><font color="#96a1c1">
+<b>time left</td><td><font color="#E9967A">
+$(session-time-left)</b></font></td></tr>
+
+$(endif)
+<tr><td align="right"><font color="#96a1c1">
+<b>bytes up/down:</td><td><font color="#E9967A">
+$(bytes-in-nice) / $(bytes-out-nice)</td></font></tr>
+
+</table>
+<br>
+<form action="$(link-login)" name="login" onSubmit="return openLogin()">
+<input type="submit" value="log in">
+
+</form>
+</td>
+
+</table>
+
+
+</body>
+
+</html>

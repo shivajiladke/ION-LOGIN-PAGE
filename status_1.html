@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>I-ON Status Page</title>
+<a href="http://www.dvois.com/">About Us</a>
+
+$(if refresh-timeout)
+<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+$(endif)
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="-1">
+<style type="text/css">
+<!--
+textarea, input, select {
+	background-color: #ADDD00;
+	border: 1px #BBBBBB solid;
+	padding: 2px;
+	margin: 1px;
+	font-size: 14px;
+	color: #888080;
+}
+
+.tabula{
+ 
+border-width: 2px; 
+border-collapse: collapse; 
+border-color: #c1c1c1; 
+background-color: transparent;
+font-family: verdana;
+font-size: 11px;
+}
+
+body{ color: #BFBF00; font-size: 12px; font-family: verdana; }
+
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 12px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #D1AAAA; }
+img {border: none;}
+td { font-size: 12px; padding: 4px;}
+
+-->
+</style>
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+</head>
+<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0" advert-pending == 'yes' 
+	onLoad="openAdvert()" bgcolor="#FFFFFF">
+<table width="100%" height="80%">
+
+<tr>
+<td align="center" valign="middle">
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+<table  class="tabula" border="1">
+$(if login-by == 'trial')
+	<br><div style="text-align: center;"><font color="#DEB887">Welcome trial user!</div><br>
+$(elif login-by != 'mac')
+	<br><div style="text-align: center;"><font color="#96a1c1"><b>Welcome $(username)!</div></b></font><br>
+$(endif)
+	<tr><td align="right"><b><font color="#96a1c1">IP address:</font></b></td><td><b>
+                   <font color="#E9967A">$(ip)</font></b></td>
+            </tr>
+	<tr><td align="right"><b><font color="#96a1c1">bytes up/down:</font></b></td><td><b>
+                    <font color="#E9967A">$(bytes-in-nice) / $(bytes-out-nice)</font></b></td>
+             </tr>
+$(if session-time-left)
+	<tr><td align="right"><b><font color="#96a1c1">connected / left:</font></b></td><td><b>
+      <font color="#E9967A">$(uptime) / $(session-time-left)</font></td></b></tr>
+$(else)
+	<tr><td align="right"><b><font color="#96a1c1">connected:</font></b></td><td><b>
+      <font color="#E9967A">$(uptime)</font></td></b></tr>
+$(endif)
+$(if blocked == 'yes')
+	<tr><td align="right"><b><font color="#96a1c1">status:</font></b></td><td><b><div style="color: #FF8080">
+<a href="$(link-advert)" target="hotspot_advert"><font color="#E9967A">advertisement</font></a><font color="#E9967A"> required</font></div></b></td>
+$(elif refresh-timeout)
+	<tr><td align="right"><b><font color="#96a1c1">status refresh:</font></b></td><td><b>
+      <font color="#E9967A">$(refresh-timeout)</font></b></td>
+$(endif)
+
+</table>
+$(if login-by-mac != 'yes')
+<br>
+<span style="background-color: #FFE0F0"><font color="#FFFFCC">
+<input type="submit" value="log off"></font></span>
+$(endif)
+<p>
+	
+    <span style="font-weight:700">
+    <a href="http://www.i-on.in/loginpage.aspx#">
+    <font size="3" color="#FF8C00">To 
+    Change the password Click </font>
+    <u>
+    <font size="4" color="#FADF00">
+    here</font></u></a></span></p>
+</form>
+</td>
+</table>
+</body>
+</html>

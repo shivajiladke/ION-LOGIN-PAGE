@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+<title>Ginger Hotel Internet > login</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<style type="text/css">
+body {color: #737373; font-size: 10px; font-weight:bold; font-family: verdana;
+background-image: url("Lailit_background.jpg");
+background-position: 50% 0%;
+background-repeat: no-repeat;
+}
+
+textarea,input,select {
+background-color: #FBFBFB;
+border: 1px solid #BBBBBB;
+padding: 2px;
+margin: 1px;
+font-size: 15px;
+color: #808080;
+}
+
+
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 14px; color: #7A7A7A; }
+</style>
+</head>
+
+<!--<img src="dvoislogo.png" align="center" img width="15%" >&reg; <br/>-->
+<body style="background-color:#FFFFFF;">
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+<div align="center">
+
+<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
+</div>
+
+<table width="100%" style="margin-top: 1%;">
+	<tr>
+	<td align="center" valign="middle">
+<div style="color: #c1c1c1; font-size: 10px">
+<br /></div>
+<br />
+
+
+<table width="50" height="200" style="border: 1px solid #cccccc; background-color: #fff;
+-webkit-border-radius: 0 0 20px 20px;
+   -moz-border-radius: 0 0 20px 20px;
+    border-radius: 0 0 30px 25px;
+    padding: 20px 56px;" cellpadding="0" cellspacing="0">
+
+<tr>
+
+<div style="background-color:#92b4f2;font-family:Varela Round, Arial, Helvetica, sans-serifi, Script MT;width:498px;border-radius: 30px 30px 0 0;color: #fff;font-size: 30px;padding: 15px 30px;text-align:left;"><b>Login Here</b>   &#128274; <img src="ionlogo.png" align="right" img width="20%" ></div>
+
+
+<td align="center" height="215" colspan="5"> 
+<form name="login" action="$(link-login-only)" method="post"
+$(if chap-id) onSubmit="return doLogin()" $(endif)>
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="true" />
+				
+<table width="100" style="background-color: #ffffff">
+<tr style="color:#777;font-size:20px;"><td align="right"><b>UserName:</b></td>
+
+<td style="padding"><input style="  background-color: #eee;
+    color: #777;
+    padding: 9px 10px;
+    width: 328px;border-radius:3px;" name="username" type="text" placeholder="Username"/></td>
+</tr>
+
+
+<tr><td align="right"><b>Password:</b></td>
+<td style="padding-top:10px;"><input style="background-color: #eee;
+    color: #777;
+    padding: 9px 10px;
+width: 328px;border-radius:3px;" name="password"
+type="password" placeholder="Password"/>
+</td>
+</tr>
+
+<tr><td>&nbsp;</td>
+<td style="padding-top:5px;"><input style="background-color:#92b4f2;color: #fff;display: block;margin: 0 auto;padding: 5px 0;width: 100px;"type="submit" value="Submit" /></td>
+</tr>
+
+</table>
+
+</form>
+</td>
+</tr>
+
+			
+</table>
+	$(if error)<br /><div style="color: #000; font-size: 13px">$(error)</div>$(endif)
+	</td>
+	</tr>
+</table>
+
+<div align="right">
+
+<a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)"></a>
+
+</div>
+<div align="left">
+ <font size="5"color="#7A5DC7"></font> </div>              </h5>
+				
+<br/>
+<br/>
+<div align="center">
+<h5><font size="3"color="#9E7BFF"><u>Internet Helpdesk Number </u> : </font><font size="5"color="#AA03c3"> 080-33360199 </font></h5></div>
+<div align="center">
+<br/>
+<br/>
+<!--<marquee direction="right" behavior="alternate" scrolldelay="160"><font size="2" color="#Fc13C6"><b></b></font>
+<font size="4" color="#800080" font-stretch="bold"> Dear Customer, this is to inform that Softel Telecom Private Limited has joined hands with I-ON in order to serve you better.</font></marquee>--> 
+</a></div>
+</div>
+
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->x
+</script>
+</body>
+</html>
